@@ -1,0 +1,88 @@
+@import url(https://db.onlinewebfonts.com/c/a78eeb1f96069e0adb615de348adbc73?family=OffBit+Trial); 
+@import url(https://db.onlinewebfonts.com/c/cac761b089f7af9abce910f81628279d?family=Dottie); 
+
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+}
+
+.HeroSectionOne{
+    display: flex;
+    align-items: center;
+
+}
+.HeroOne{
+    
+    background: #FFFFFF;
+    font-family: "Offbit-2";
+    font-size: 100px;
+    display: flexbox;
+    text-align:left;
+}
+.hero-heading{
+    display: flex;
+  
+}
+.HeroTwo{
+    height: 60vh;
+    background: linear-gradient(180deg, #FFFFFF 30%, #000000 100%,#000000 50%);
+}
+
+.HeroThree{
+    height: 100vh;
+    background: #000000;
+    color: #FFFFFF;
+}
+
+.SignUp-Button ,.Login-button{
+    font-size: 30px;
+    border-radius: 30px;
+    display: block;
+    display: flex;
+    margin: 0.75rem;
+    padding:0.25rem;
+    padding-inline: 1rem;
+    transition: all linear 300ms ;
+}
+.SignUp-Button ,.Login-button:hover{
+    border: 3px solid black;
+    background-color: white;
+    color:black ;
+}
+
+.Login-button,.SignUp-Button:hover{
+    border: 3px solid white;
+    background-color: black;
+    color: white;
+}
+
+.hero-div-2{
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.hero-details-container{
+   
+    width: 500px;
+    border: 3px solid black;
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+
+.hero-details-container ul{
+    text-align: right;
+}
+.hero-details-container ul li{
+    font-size: 20px;
+
+
+}
+
+
+
+
+
