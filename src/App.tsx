@@ -1,20 +1,12 @@
-import './App.css'
-import './styles/heroPage.css'
-import HeroOne from './pages/HeroOne'
-
-
+import "./styles/heroPage.css";
+import HeroOne from "./pages/HeroOne";
 
 function App() {
-  
-
   return (
     <>
-
-      <HeroOne/>
-  
-
+      <HeroOne />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
