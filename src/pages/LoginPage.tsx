@@ -1,13 +1,15 @@
 import "../styles/loginPage.css";
-
+import TypeWriter from "../functions/typeWriter";
+import { loginTypeWriterText } from "../functions/constants";
 const LoginPage = () => {
   return (
     <section className="loginPageSection">
       <div className="LoginPageTagLineContainer">
-        <h1>Welcome Back</h1>
-        <p>
-          Unlock Opportunities, Foster Connections: Welcome to devConn – Your
-          Gateway to Resource Sharing, Ratings, Hackathon Partnerships, Job
+        <div className="devConnLoginHead">DevConn</div>
+        <div className="loginTypeWriterText"> <TypeWriter array={loginTypeWriterText}/>  </div>
+        
+        <p className="LoginTaglineText">
+          Your Gateway to Resource Sharing, Ratings, Hackathon Partnerships, Job
           Postings, Referral Programs, Community Building, and Bug Squashing!
         </p>
       </div>

@@ -6,7 +6,7 @@
 .loginPageSection{
     display: flex;
     padding: 5.5rem;
-    justify-content: space-between;
+    justify-content: space-around;
     margin: 6.25rem;
     margin-inline: 0px;
    
@@ -18,6 +18,24 @@
     margin: auto;
 
 }
+
+.devConnLoginHead{
+    font-size: 5rem;
+    font-weight: bolder;
+    text-align: left;
+}
+
+.loginTypeWriterText{
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: left;
+}
+
+.LoginTaglineText{
+    font-size: 1.25rem;
+    font-family:'Offbit-4' ;
+}
+
 
 .loginInputsDiv ,.LoginPageTagLineContainer{
     display: flex;
@@ -35,6 +53,11 @@
 
 .loginInputsDiv{
     box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    padding: 1.5rem;
+    padding-inline: 2.5rem;
+}
+
+.LoginPageTagLineContainer{
     padding: 1.5rem;
     padding-inline: 2.5rem;
 }

@@ -7,3 +7,8 @@ export const devConnDetails: string[] = [
     "community building",
     "bug postings",
   ];
+
+  export const loginTypeWriterText: string[]=[
+    "Unlock Opportunities",
+    "Foster Connections",
+  ];
