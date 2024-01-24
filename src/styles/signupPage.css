@@ -1,0 +1,97 @@
+*{
+    font-family: 'Offbit-1';
+    overflow-x: hidden;
+}
+
+.signupPageSection{
+    display: flex;
+    padding: 5.5rem;
+    justify-content: space-around;
+    margin: 6.25rem;
+    margin-inline: 0px;
+   
+}
+
+.SignupPageTagLineContainer{
+    display: flex;
+    flex-direction: column;
+    width: 30vw;
+    padding: 1.5rem;
+    padding-inline: 2.5rem;
+}
+
+
+.devConnSignupHead{
+    font-size: 5rem;
+    font-weight: bolder;
+    text-align: left;
+}
+
+.signupTypeWriterText{
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: left;
+}
+
+.signupTaglineText{
+    font-size: 1.25rem;
+    font-family:'Offbit-4' ;
+}
+
+.signupInputsDiv{
+    width: 30rem;
+    padding: 1.25rem;
+    padding-inline: 2.25rem;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+.signupHead{
+    font-size: 4rem;
+    font-weight: bolder;
+    margin-bottom: 1rem;
+    text-align: center;
+
+}
+
+.signupInputsDiv input{
+    width: 25rem;
+    height: 3.125rem;
+    border-radius: 0.75rem;
+    padding: 0.5rem;
+    margin: 1rem;
+    margin-inline: 0;
+}
+
+.signupInputsDiv label {
+    font-size:1.5rem ; 
+}
+
+.signupSubmitButton{
+    width: 25rem;
+    height: 3.125rem;
+    border-radius: 0.75rem;
+    margin-inline: 0;
+    font-size:1.5rem ;
+    background-color: #FFFFFF;
+    color: #000000;
+    border: 3px solid #000000;
+    transition: all linear 300ms;
+}
+
+.signupSubmitButton:hover{
+    background-color: #000000;
+    color: #FFFFFF;
+    border: 3px solid #FFFFFF;
+    }
+
+.alreadyHaveAccText{
+    text-decoration: none;
+}    
+.alreadyHaveAccText:hover{
+    text-decoration: underline;
+}  

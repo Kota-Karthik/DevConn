@@ -8,7 +8,12 @@ export const devConnDetails: string[] = [
     "bug postings",
   ];
 
-  export const loginTypeWriterText: string[]=[
+  export const signupTypeWriterText: string[]=[
     "Unlock Opportunities",
     "Foster Connections",
+  ];
+
+  export const loginTypeWriterText:string[]=[
+    "Unleashing Collaboration",
+    "Elevating Expertise",
   ];

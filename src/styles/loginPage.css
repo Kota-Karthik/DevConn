@@ -2,21 +2,9 @@
     font-family: 'Offbit-1';
     overflow-x: hidden;
 }
-
-.loginPageSection{
-    display: flex;
-    padding: 5.5rem;
-    justify-content: space-around;
-    margin: 6.25rem;
-    margin-inline: 0px;
-   
-}
-
-.loginHead{
-    font-size: 5rem;
-    font-weight: bolder;
-    margin: auto;
-
+.LoginPageTagLineContainer{
+    padding: 1.5rem;
+    padding-inline: 2.5rem;
 }
 
 .devConnLoginHead{
@@ -35,6 +23,23 @@
     font-size: 1.25rem;
     font-family:'Offbit-4' ;
 }
+
+.loginPageSection{
+    display: flex;
+    padding: 5.5rem;
+    justify-content: space-around;
+    margin: 6.25rem;
+    margin-inline: 0px;
+   
+}
+
+.loginHead{
+    font-size: 5rem;
+    font-weight: bolder;
+    margin: auto;
+
+}
+
 
 
 .loginInputsDiv ,.LoginPageTagLineContainer{
@@ -57,11 +62,6 @@
     padding-inline: 2.5rem;
 }
 
-.LoginPageTagLineContainer{
-    padding: 1.5rem;
-    padding-inline: 2.5rem;
-}
-
 .loginSubmitButton{
     width: 25rem;
     height: 3.125rem;
@@ -78,7 +78,7 @@
     background-color: #000000;
     color: #FFFFFF;
     border: 3px solid #FFFFFF;
-    }
+}
 .loginInputsDiv label {
     font-size:1.5rem ; 
 }

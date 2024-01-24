@@ -6,11 +6,14 @@ const LoginPage = () => {
     <section className="loginPageSection">
       <div className="LoginPageTagLineContainer">
         <div className="devConnLoginHead">DevConn</div>
-        <div className="loginTypeWriterText"> <TypeWriter array={loginTypeWriterText}/>  </div>
-        
+        <div className="loginTypeWriterText">
+          
+          <TypeWriter array={loginTypeWriterText} />
+        </div>
+
         <p className="LoginTaglineText">
-          Your Gateway to Resource Sharing, Ratings, Hackathon Partnerships, Job
-          Postings, Referral Programs, Community Building, and Bug Squashing!
+          Your Hub for Resource Sharing, Hackathon Partnerships, Job Postings,
+          and Community Building in the World of Developers.
         </p>
       </div>
 
@@ -23,8 +26,12 @@ const LoginPage = () => {
         <button type="submit" className="loginSubmitButton">
           Login
         </button>
-        <div className="notRegisteredYetText">Not registered yet? <a href="#">Join us!</a></div>
-        <a href="#" className="forgotPasswordText">Forget Password?</a>
+        <div className="notRegisteredYetText">
+          Not registered yet? <a href="#">Join us!</a>
+        </div>
+        <a href="#" className="forgotPasswordText">
+          Forget Password?
+        </a>
       </div>
     </section>
   );
