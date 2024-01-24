@@ -83,10 +83,7 @@
   list-style: none;
 }
 
-.HeroTwo {
-  height: 60vh;
-  background: linear-gradient(180deg, #ffffff 30%, #000000 100%, #000000 50%);
-}
+
 
 .HeroThree {
   height: 100vh;

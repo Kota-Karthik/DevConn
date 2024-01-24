@@ -5,7 +5,7 @@ import { devConnDetails } from "../functions/constants";
 import "../styles/heroPage.css";
 import "../styles/customFont.css";
 
-const HeroPage = () => {
+const HeroOne = () => {
   const NavigateTo = useNavigation();
   const changingFontDiv = useRef<HTMLDivElement>(null);
 
@@ -37,4 +37,4 @@ const HeroPage = () => {
   );
 };
 
-export default HeroPage;
+export default HeroOne;

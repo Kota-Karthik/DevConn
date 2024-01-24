@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
-import "./styles/heroPage.css";
+
 import "./styles/customFont.css";
-import HeroOne from "./pages/HeroOne";
+import Hero from "./pages/Hero";
 import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
 
@@ -9,7 +9,7 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<HeroOne />} />
+        <Route path="/" element={<Hero />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
       </Routes>
