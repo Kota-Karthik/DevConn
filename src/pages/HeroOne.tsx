@@ -1,11 +1,12 @@
 import { useRef } from "react";
+import useNavigation from "../functions/useNavigation";
 import { FontChanger } from "../functions/fontChanger";
 import { devConnDetails } from "../functions/constants";
 import "../styles/heroPage.css";
 import "../styles/customFont.css";
 
 const HeroPage = () => {
-  
+  const NavigateTo = useNavigation();
   const changingFontDiv = useRef<HTMLDivElement>(null);
 
   FontChanger(changingFontDiv,300);
@@ -18,8 +19,8 @@ const HeroPage = () => {
         </div>
         <div className="hero-div-2">
           <div className="hero-buttons">
-            <button className="SignUp-Button">Join now!</button>
-            <button className="Login-button">Lets connect</button>
+            <button className="SignUp-Button" onClick={NavigateTo("/signup")}>Join now!</button>
+            <button className="Login-button" onClick={NavigateTo("/login")}>Lets connect</button>
           </div>
           <div>
             <div className="hero-details-container">

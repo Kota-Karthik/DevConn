@@ -1,6 +1,7 @@
-import "../styles/signupPage.css";
-import TypeWriter from "../functions/typeWriter";
+import { Link } from "react-router-dom";
+import TypeWriter from "../functions/TypeWriter";
 import { signupTypeWriterText } from "../functions/constants";
+import "../styles/signupPage.css";
 const SignupPage = () => {
   return (
    <section className="signupPageSection">
@@ -14,7 +15,7 @@ const SignupPage = () => {
         </p>
       </div>
     <div className="signupInputsDiv">
-        <div className="signupHead">Lets connect!</div>
+        <div className="signupHead">Sign up</div>
         <label htmlFor="Name">Name</label>
         <input type="text" id="Name" placeholder="name"/>
         <label htmlFor="Email">Email</label>
@@ -24,7 +25,7 @@ const SignupPage = () => {
         <label htmlFor="Confirm_Password">Confirm Password</label>
         <input type="text" id="Confirm_Password" placeholder="confirm password"/>
         <button type="submit" className="signupSubmitButton">Register</button>
-        <div >Already have an account? <a href="#" className="alreadyHaveAccText">Login</a> </div>
+        <div >Already have an account? <Link to="/login" className="alreadyHaveAccText">Login</Link> </div>
     </div>
    </section>
   );

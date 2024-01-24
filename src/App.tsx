@@ -1,3 +1,4 @@
+import { Route, Routes } from "react-router-dom";
 import "./styles/heroPage.css";
 import "./styles/customFont.css";
 import HeroOne from "./pages/HeroOne";
@@ -7,9 +8,11 @@ import SignupPage from "./pages/SignupPage";
 function App() {
   return (
     <>
-      <HeroOne />
-      <LoginPage />
-      <SignupPage/>
+      <Routes>
+        <Route path="/" element={<HeroOne />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/signup" element={<SignupPage />} />
+      </Routes>
     </>
   );
 }

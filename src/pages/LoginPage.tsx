@@ -1,5 +1,6 @@
 import "../styles/loginPage.css";
-import TypeWriter from "../functions/typeWriter";
+import { Link } from "react-router-dom";
+import TypeWriter from "../functions/TypeWriter";
 import { loginTypeWriterText } from "../functions/constants";
 const LoginPage = () => {
   return (
@@ -27,11 +28,11 @@ const LoginPage = () => {
           Login
         </button>
         <div className="notRegisteredYetText">
-          Not registered yet? <a href="#">Join us!</a>
+          Not registered yet? <Link to="/signup">Join us!</Link>
         </div>
-        <a href="#" className="forgotPasswordText">
+        <Link to="#" className="forgotPasswordText">
           Forget Password?
-        </a>
+        </Link>
       </div>
     </section>
   );
