@@ -1,0 +1,20 @@
+.heroTwo{
+height: 100vh;
+width: 100vw;
+background-color: black;
+color: white;
+
+}
+
+.heroTwoPageBar{
+    font-size:calc((100vh) / 5) ;
+    height: calc((100vh) / 5);
+    background-color: transparent; 
+    text-align: center;
+    overflow: hidden;
+  
+}
+
+.heroTwoPageBar:hover{
+    color: red;
+}

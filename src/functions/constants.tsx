@@ -17,3 +17,11 @@ export const devConnDetails: string[] = [
     "Unleashing Collaboration",
     "Elevating Expertise",
   ];
+  
+  export const heroTwoPageText:string[]=[
+    "Welcome To",
+    "DevConn",
+    "Connect",
+    "Develop⇗",
+    "Share Rate!"
+  ];
