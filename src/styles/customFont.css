@@ -1,36 +1,43 @@
 @font-face {
-    font-family: 'Offbit-1';
-    src: url('src/fonts/OffBitTrial-101.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
-  }
-  @font-face {
-    font-family: 'Offbit-2';
-    src: url('src/fonts/OffBitTrial-101Bold.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
-  }
-  @font-face {
-    font-family: 'Offbit-3';
-    src: url('src/fonts/OffBitTrial-Bold.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
-  }
-  @font-face {
-    font-family: 'Offbit-4';
-    src: url('src/fonts/OffBitTrial-Dot.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
-  }
-  @font-face {
-    font-family: 'Offbit-5';
-    src: url('src/fonts/OffBitTrial-DotBold.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
-  }
-  @font-face {
-    font-family: 'Offbit-6';
-    src: url('src/fonts/OffBitTrial-Regular.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
-  }
+  font-family: "Offbit-1";
+  src: url("src/fonts/OffBitTrial-101.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Offbit-2";
+  src: url("src/fonts/OffBitTrial-101Bold.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Offbit-3";
+  src: url("src/fonts/OffBitTrial-Bold.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Offbit-4";
+  src: url("src/fonts/OffBitTrial-Dot.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Offbit-5";
+  src: url("src/fonts/OffBitTrial-DotBold.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Offbit-6";
+  src: url("src/fonts/OffBitTrial-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Power Grotesk;
+  src: url("src/fonts/PowerGroteskTrial-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
