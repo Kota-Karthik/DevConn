@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.heading {
+  font-family: "Offbit-2";
+}
+
+.text {
+  font-family: "Power Grotesk";
+}
