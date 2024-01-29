@@ -3,10 +3,21 @@ import { Link } from "react-router-dom";
 import { BsTwitterX } from "react-icons/bs";
 import { FaGithub } from "react-icons/fa6";
 import { FooterItems } from "../constants";
+import { motion } from "framer-motion";
 
 const Footer = () => {
+  const footerVariants = {
+    hidden: { opacity: 0, y: "100%" },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, delay: 0.2 } },
+  };
+
   return (
-    <footer className="pt-8 pb-6 border-4 border-black rounded-lg m-1">
+    <motion.footer
+      initial="hidden"
+      animate="visible"
+      variants={footerVariants}
+      className="pt-8 pb-6 border-4 border-black rounded-lg m-1"
+    >
       <div className="container mx-auto px-4">
         <div className="flex flex-wrap text-left lg:text-left">
           <div className="w-full lg:w-6/12 px-4">
@@ -41,7 +52,7 @@ const Footer = () => {
                 <ul className="list-unstyled text tracking-wide">
                   {FooterItems.map((link) => {
                     return (
-                      <li>
+                      <li key={link.name}>
                         <Link
                           className="text-blueGray-600 hover:text-blueGray-800 font-semibold hover:opacity-80 block pb-2 text-sm"
                           to={link.path}
@@ -72,7 +83,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
+    </motion.footer>
   );
 };
 

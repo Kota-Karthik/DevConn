@@ -3,7 +3,7 @@ import HeroTwoPageBar from "../components/HeroTwoPageBar";
 import { heroTwoPageText } from "../functions/constants";
 const HeroTwo = () => {
   return (
-    <div className="heroTwo">
+    <div className="heroTwo mb-1 p-2">
       {heroTwoPageText.map((title, id) => {
         return <HeroTwoPageBar title={title} key={id} />;
       })}
@@ -12,3 +12,4 @@ const HeroTwo = () => {
 };
 
 export default HeroTwo;
+  

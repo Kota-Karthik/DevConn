@@ -1,8 +1,37 @@
+import React, { ChangeEvent, FormEvent } from "react";
 import TypeWriter from "../functions/TypeWriter";
 import { signupTypeWriterText } from "../functions/constants";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import axios from "axios";
+import ConnectWithGoogle from "../components/ConnectWithGoogle";
 
-const Signup = () => {
+type SignpupProps = {
+  username: string;
+  email: string;
+  password: string;
+};
+
+const Signup: React.FC = () => {
+  const [formData, setFormData] = React.useState<SignpupProps>({
+    username: "",
+    email: "",
+    password: "",
+  });
+
+  const [error, setError] = React.useState<string | null>("");
+  const [success, setSucess] = React.useState<string | null>("");
+  const [isPending, startTransition] = React.useTransition();
+
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+    e.preventDefault();
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log(formData);
+  };
   return (
     <>
       <div className="flex flex-row bg-gray-900 select-text">
@@ -27,7 +56,11 @@ const Signup = () => {
                 <div className="heading text-4xl font-bold text-gray-900  sm:w-[100%] space-y-6">
                   <h2>Create an account</h2>
                 </div>
-                <form method="POST" className="mt-8 space-y-4">
+                <form
+                  method="POST"
+                  onSubmit={handleSubmit}
+                  className="mt-8 space-y-4"
+                >
                   <div>
                     <label
                       htmlFor="username"
@@ -39,6 +72,8 @@ const Signup = () => {
                       type="text"
                       name="username"
                       id="username"
+                      value={formData.username}
+                      onChange={handleInputChange}
                       placeholder="John doe"
                       autoComplete="off"
                       className="text bg-gray-50 border border-black text-gray-900 text-md rounded-lg focus:ring-gray-900 focus:border-gray-900 block w-full p-2  select-all"
@@ -56,9 +91,11 @@ const Signup = () => {
                       type="email"
                       name="email"
                       id="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
                       placeholder="john.doe@example.com"
                       autoComplete="off"
-                      className="text bg-gray-50 border border-black text-gray-900 text-md rounded-lg focus:ring-gray-900 focus:border-gray-900 block w-full p-2  select-all"
+                      className="text tracking-wide bg-gray-50 border border-black text-gray-900 text-md rounded-lg focus:ring-gray-900 focus:border-gray-900 block w-full p-2  select-all"
                       required
                     />
                   </div>
@@ -73,9 +110,11 @@ const Signup = () => {
                       type={"password"}
                       name="password"
                       id="password"
+                      value={formData.password}
+                      onChange={handleInputChange}
                       placeholder="••••••••"
                       autoComplete="off"
-                      className="text bg-gray-50 border border-black text-gray-900 text-md rounded-lg focus:ring-gray-900 focus:border-gray-900 block w-full p-2  select-all"
+                      className="text tracking-wide bg-gray-50 border border-black text-gray-900 text-md rounded-lg focus:ring-gray-900 focus:border-gray-900 block w-full p-2  select-all"
                       required
                     />
                   </div>
@@ -92,7 +131,7 @@ const Signup = () => {
                       id="confirmPassword"
                       placeholder="••••••••"
                       autoComplete="off"
-                      className="text bg-gray-50 border border-black text-gray-900 text-md rounded-lg focus:ring-gray-900 focus:border-gray-900 block w-full p-2  select-all"
+                      className="text tracking-wide bg-gray-50 border border-black text-gray-900 text-md rounded-lg focus:ring-gray-900 focus:border-gray-900 block w-full p-2  select-all"
                       required
                     />
                   </div>
@@ -102,59 +141,11 @@ const Signup = () => {
                   >
                     Create an account
                   </button>
-                  <div className="flex flex-row items-center">
-                    <hr className="w-[48%] sm:w-[48%] md:w-[48%] lg:w-[48%]" />
-                    <div className="m-1">
-                      <h3 className="text-sm font-medium text-medium dark:text-white">
-                        OR
-                      </h3>
-                    </div>
-                    <hr className="w-[48%] sm:w-[48%] md:w-[48%] lg:w-[48%]" />
-                  </div>
-                  <button className="w-full">
-                    <div className="flex flex-row justify-center items-center border border-gray-400 rounded-lg p-2.5 hover:bg-gray-100 hover:text-gray-700 transition ease-in-out duration-500">
-                      <svg
-                        width="1em"
-                        height="1em"
-                        className="m-2.5 cursor-pointer sm:w-2em sm:h-wem"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          clipRule="evenodd"
-                          d="M23.52 12.275c0-.851-.076-1.67-.218-2.455H12v4.642h6.458a5.52 5.52 0 01-2.394 3.622v3.01h3.878c2.269-2.088 3.578-5.165 3.578-8.82z"
-                          fill="#4285F4"
-                        ></path>
-                        <path
-                          fillRule="evenodd"
-                          clipRule="evenodd"
-                          d="M11.997 24.001c3.24 0 5.956-1.074 7.942-2.907l-3.878-3.01c-1.075.72-2.45 1.145-4.064 1.145-3.125 0-5.77-2.111-6.714-4.948h-4.01v3.11A11.995 11.995 0 0011.997 24z"
-                          fill="#34A853"
-                        ></path>
-                        <path
-                          fillRule="evenodd"
-                          clipRule="evenodd"
-                          d="M5.285 14.278a7.213 7.213 0 01-.376-2.28c0-.79.136-1.56.376-2.28V6.61H1.276A11.995 11.995 0 000 12c0 1.936.464 3.769 1.276 5.389l4.01-3.11z"
-                          fill="#FBBC05"
-                        ></path>
-                        <path
-                          fillRule="evenodd"
-                          clipRule="evenodd"
-                          d="M11.997 4.773c1.762 0 3.344.605 4.587 1.794l3.442-3.442C17.948 1.19 15.232 0 11.997 0 7.307 0 3.248 2.69 1.273 6.61l4.01 3.11c.943-2.836 3.589-4.947 6.714-4.947z"
-                          fill="#EA4335"
-                        ></path>
-                      </svg>
-                      <h3 className="font-semibold text-lg cursor-pointer">
-                        Continue with Google
-                      </h3>
-                    </div>
-                  </button>
                 </form>
+                <ConnectWithGoogle />
                 <NavLink
-                  to="/login"
-                  className="text ml-auto text-sm font-medium hover:underline text-black"
+                  to="/auth/login"
+                  className="mt-5 text text-center ml-auto text-sm font-medium hover:underline text-black"
                 >
                   <div className="text-sm font-medium text-gray-900  m-1">
                     Already have an account?
