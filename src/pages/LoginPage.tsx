@@ -15,9 +15,9 @@ const Login: React.FC = () => {
     password: "",
   });
 
-  const [error, setError] = React.useState<string | null>("");
-  const [success, setSucess] = React.useState<string | null>("");
-  const [isPending, startTransition] = React.useTransition();
+  // const [error, setError] = React.useState<string | null>("");
+  // const [success, setSucess] = React.useState<string | null>("");
+  // const [isPending, startTransition] = React.useTransition();
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
