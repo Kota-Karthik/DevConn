@@ -1,14 +1,15 @@
 import { useRef } from "react";
 import useNavigation from "../functions/useNavigation";
 import { FontChanger } from "../functions/fontChanger";
-import { devConnDetails } from "../functions/constants";
+// import { devConnDetails } from "../functions/constants";
+import { ConstantState } from "../constants/ConstantProvider";
 import "../styles/heroPage.css";
 import "../styles/customFont.css";
 
 const HeroOne = () => {
   const NavigateTo = useNavigation();
   const changingFontDiv = useRef<HTMLDivElement>(null);
-
+  const {devConnDetails}=ConstantState();
   FontChanger(changingFontDiv, 300);
 
   return (

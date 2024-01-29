@@ -1,8 +1,7 @@
 import React, { ChangeEvent, FormEvent } from "react";
 import TypeWriter from "../functions/TypeWriter";
-import { signupTypeWriterText } from "../functions/constants";
+import { ConstantState } from "../constants/ConstantProvider";
 import { NavLink } from "react-router-dom";
-// import axios from "axios";
 import ConnectWithGoogle from "../components/ConnectWithGoogle";
 
 type SignpupProps = {
@@ -17,10 +16,7 @@ const Signup: React.FC = () => {
     email: "",
     password: "",
   });
-
-  // const [error, setError] = React.useState<string | null>("");
-  // const [success, setSucess] = React.useState<string | null>("");
-  // const [isPending, startTransition] = React.useTransition();
+  const {signupTypeWriterText}=ConstantState();
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();

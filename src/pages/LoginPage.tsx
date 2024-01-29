@@ -1,7 +1,8 @@
 import React, { ChangeEvent, FormEvent } from "react";
 import ConnectWithGoogle from "../components/ConnectWithGoogle";
 import TypeWriter from "../functions/TypeWriter";
-import { loginTypeWriterText } from "../functions/constants";
+
+import { ConstantState } from "../constants/ConstantProvider";
 import { Link, NavLink } from "react-router-dom";
 
 type LoginFormProps = {
@@ -14,10 +15,9 @@ const Login: React.FC = () => {
     email: "",
     password: "",
   });
+  const {loginTypeWriterText}=ConstantState();
 
-  // const [error, setError] = React.useState<string | null>("");
-  // const [success, setSucess] = React.useState<string | null>("");
-  // const [isPending, startTransition] = React.useTransition();
+
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
