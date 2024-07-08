@@ -1,15 +1,17 @@
 import React from "react";
 import { GithubIcon, GoogleIcon } from "../components/Icons";
+import useNavigation from "../functions/useNavigation";
 import LoginButtons from "../components/LoginButtons";
 
 const Login: React.FC = () => {
+  const NavigateTo = useNavigation();
   return (
     <>
-      <div className="bg-black w-full h-[950px] flex">
+      <div className="bg-black w-full h-[100vh] flex">
         <div className="w-[30%]  bg-gradient-to-r from-[#171616] via-[#2b2a2a] to-[#171616] my-auto mx-auto rounded-xl p-10 text-white">
           <div className="text-[3rem] font-extrabold">Log In</div>
           <div className="text-[1.25rem] font-medium">
-            Don't have an account? <a href="/auth/register" className="hover:underline">Sign Up</a>
+            Don't have an account? <button onClick={NavigateTo("/auth/register")} className="hover:underline">Sign Up</button>
           </div>
           <div className="my-[2.5rem]">
             <LoginButtons text="Google" Icon={GoogleIcon} />

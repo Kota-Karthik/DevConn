@@ -1,4 +1,4 @@
-import "../styles/herotwo.css";
+// import "../styles/herotwo.css";
 import HeroTwoPageBar from "../components/HeroTwoPageBar";
 import { ConstantState } from "../constants/ConstantProvider";
 const HeroTwo = () => {

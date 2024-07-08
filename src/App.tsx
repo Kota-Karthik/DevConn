@@ -1,5 +1,4 @@
 import { Route, Routes } from "react-router-dom";
-
 import "./styles/customFont.css";
 import Hero from "./pages/Hero";
 import LoginPage from "./pages/LoginPage";
@@ -22,3 +21,5 @@ function App() {
 }
 
 export default App;
+
+//  color:- #4edcd8

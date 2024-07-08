@@ -2,6 +2,7 @@
   box-sizing: border-box;
   margin: 0px;
   padding: 0px;
+
 }
 
 .HeroSectionOne {
@@ -15,6 +16,7 @@
     rgba(255, 255, 255, 1) 50%,
     rgb(0, 0, 0) 96%
   );
+  cursor: none;
 }
 .HeroOne {
   background-color: inherit;
@@ -84,4 +86,15 @@
   height: 100vh;
   background: #000000;
   color: #ffffff;
+}
+
+.cursor{
+  background-color: #000000;
+  height: 32px;
+  width: 32px;
+  border-radius: 50%; 
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
 }
