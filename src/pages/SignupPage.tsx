@@ -32,14 +32,22 @@ const SignupPage: React.FC = () => {
       throw new Error(passwordsDontMatchError);
     }
     try {
-      const config={
-        headers:{
-          "Content-type":"application/json",
+      const config = {
+        headers: {
+          "Content-type": "application/json",
         },
       }
-      const {data}=await axios.post("http://localhost:5000/user/register",{name,email,password},config);
-      console.log("data: ",data);
-      localStorage.setItem("userInfo",JSON.stringify(data));
+      const { data } = await axios.post("http://localhost:5000/user/register", { name, email, password }, config);
+      // console.log("data: ", data);
+      localStorage.setItem("userInfo", JSON.stringify(data));
+      setUserDetails(
+        {
+          name: "",
+          email: "",
+          password: "",
+          confirmPassword: "",
+        }
+      );
       setLoading(false);
       // NavigateTo("/chats");
     } catch (err) {
@@ -102,7 +110,7 @@ const SignupPage: React.FC = () => {
             onChange={(e) => { setUserDetails({ ...userDetails, confirmPassword: e.target.value }) }}
             required={true} />
           <button
-            className={`w-full p-2 bg-white text-black text-[1.25rem] font-bold py-2 px-4 rounded-lg border-[1px] border-black hover:border-white hover:bg-black hover:text-white rounded-lg flex items-center justify-center`}
+            className={`w-full p-2 bg-white text-black text-[1.25rem] font-bold py-2 px-4  border-[1px] border-black hover:border-white hover:bg-black hover:text-white rounded-lg flex items-center justify-center`}
             onClick={register}
             onMouseEnter={() => setColors(['#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF'])}
             onMouseLeave={() => setColors(['#000000', '#000000', '#000000', '#000000', '#000000'])}
