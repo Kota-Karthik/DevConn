@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import { ColorRing } from "react-loader-spinner";
+import axios from "axios";
 import { GithubIcon, GoogleIcon } from "../components/Icons";
 import useNavigation from "../functions/useNavigation";
 import LoginButtons from "../components/LoginButtons";
 
 const SignupPage: React.FC = () => {
+  const passwordsDontMatchError = "Passwords don't match!";
+  const inputCantBeEmptyError = "Inputs can't be empty!";
   const NavigateTo = useNavigation();
   const [loading, setLoading] = useState(false);
   const [colors, setColors] = useState(['#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF']);
@@ -17,13 +20,32 @@ const SignupPage: React.FC = () => {
     }
   )
 
-  const register = async() => {
+  const register = async () => {
     setLoading(true);
     const { name, email, password, confirmPassword } = userDetails;
-    if(password!=confirmPassword){
-      throw new Error("Passwords don't match");
+    if (!name || !email || !password || !confirmPassword) {
+      setLoading(false);
+      throw new Error(inputCantBeEmptyError);
     }
-
+    if (password != confirmPassword) {
+      setLoading(false);
+      throw new Error(passwordsDontMatchError);
+    }
+    try {
+      const config={
+        headers:{
+          "Content-type":"application/json",
+        },
+      }
+      const {data}=await axios.post("http://localhost:5000/user/register",{name,email,password},config);
+      console.log("data: ",data);
+      localStorage.setItem("userInfo",JSON.stringify(data));
+      setLoading(false);
+      // NavigateTo("/chats");
+    } catch (err) {
+      setLoading(false);
+      throw new Error(JSON.stringify(err));
+    }
   }
   return (
     <>
@@ -51,24 +73,31 @@ const SignupPage: React.FC = () => {
           <div className="font-bold text-[1.25rem] ">Username</div>
           <input
             type="text"
+            minLength={2}
+            maxLength={50}
             className="w-full p-2 mb-4 rounded bg-transparent border-[1px]"
             onChange={(e) => { setUserDetails({ ...userDetails, name: e.target.value }) }}
             required={true} />
           <div className="font-bold text-[1.25rem] ">Email</div>
           <input
-            type="text"
+            type="email"
+            maxLength={50}
             className="w-full p-2 mb-4 rounded bg-transparent border-[1px]"
             onChange={(e) => { setUserDetails({ ...userDetails, email: e.target.value }) }}
             required={true} />
           <div className="font-bold text-[1.25rem] ">Password</div>
           <input
             type="password"
+            minLength={8}
+            maxLength={100}
             className="w-full p-2 mb-4 rounded bg-transparent border-[1px]"
             onChange={(e) => { setUserDetails({ ...userDetails, password: e.target.value }) }}
             required={true} />
           <div className="font-bold text-[1.25rem] ">Confirm Password</div>
           <input
             type="password"
+            minLength={8}
+            maxLength={100}
             className="w-full p-2 mb-4 rounded bg-transparent border-[1px]"
             onChange={(e) => { setUserDetails({ ...userDetails, confirmPassword: e.target.value }) }}
             required={true} />
